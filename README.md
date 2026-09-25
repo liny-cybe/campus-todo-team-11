@@ -65,3 +65,11 @@ git push origin v0.1.0
 - 作者不能批准自己的 Pull Request；评审意见处理完毕且 CI 通过后再合并。
 - 不提交 `.idea/`、`target/`、访问令牌、账号密码或个人隐私数据。
 - 禁止使用 `git push --force` 修改共享的 `main` 分支。
+## 7. 协作流程
+本项目采用GitHub Flow流程：
+1. 基于main分支创建独立feature分支进行开发；
+2. 在本地完成编码与单元测试；
+3. 推送分支到远程仓库，创建Pull Request；
+4. 通过代码评审，CI流水线全部通过后，方可合并到main分支；
+5. main分支必须时刻保持可编译，所有测试用例通过。
+   禁止直接向main分支提交代码。
