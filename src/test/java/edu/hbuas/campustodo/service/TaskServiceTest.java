@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class TaskServiceTest {
-
+    private TaskService taskService;
     @Test
     void shouldAddTask() {
         TaskService service = new TaskService();
