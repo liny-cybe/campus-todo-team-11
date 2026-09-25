@@ -29,4 +29,16 @@ public class TaskService {
             .filter(task -> task.getPriority() == priority)
             .collect(Collectors.toList());
     }
+    public void completeTask(long id) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
+                if (task.isCompleted()) {
+                    throw new IllegalStateException("任务已完成，请勿重复操作");
+                }
+                task.complete();
+                return;
+            }
+        }
+        throw new IllegalArgumentException("找不到编号为 " + id + " 的任务");
+    }
 }
