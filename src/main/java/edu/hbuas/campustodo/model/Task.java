@@ -9,6 +9,8 @@ public class Task {
     private final long id;
     private final String title;
     private boolean completed;
+    // 新增优先级字段，默认MEDIUM
+    private Priority priority = Priority.MEDIUM;
 
     public Task(long id, String title) {
         if (id <= 0) {
@@ -21,20 +23,21 @@ public class Task {
         this.title = title.trim();
     }
 
-    public long getId() {
-        return id;
+    public long getId() { return id; }
+
+    public String getTitle() { return title; }
+
+    public boolean isCompleted() { return completed; }
+
+    public void complete() { completed = true; }
+
+    // 新增优先级get、set
+    public Priority getPriority() {
+        return priority;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public boolean isCompleted() {
-        return completed;
-    }
-
-    public void complete() {
-        completed = true;
+    public void setPriority(Priority priority) {
+        this.priority = priority;
     }
 
     @Override
